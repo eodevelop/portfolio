@@ -1,15 +1,31 @@
 .header {
-    background-color: #f8f8f8;
-    padding: 1rem;
-  
-    nav {
-      display: flex;
-      justify-content: center;
-  
-      a {
-        margin: 0 1rem;
-        color: #333;
-        font-weight: bold;
+  &.fixed-top {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000; // 다른 요소 위에 표시
+  }
+
+  &.transparent {
+    background-color: transparent;
+    backdrop-filter: blur(5px); // 약간의 블러 효과로 깊이감 추가
+  }
+
+  nav {
+    display: flex;
+    justify-content: center;
+
+    a {
+      margin: 0 1rem;
+      color: #333;
+      font-weight: bold;
+      text-decoration: none;
+      transition: color 0.3s ease;
+
+      &:hover {
+        color: #007bff; // 호버 시 색상 변경
       }
     }
   }
+}
